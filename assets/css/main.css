@@ -1,0 +1,372 @@
+@import url('colors.css');
+
+/* fonts */
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('../fonts/inter/Inter-Regular.woff2') format('woff2'),
+        url('../fonts/inter/Inter-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Medium'), local('Inter-Medium'),
+        url('../fonts/inter/Inter-Medium.woff2') format('woff2'),
+        url('../fonts/inter/Inter-Medium.woff') format('woff');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter SemiBold'), local('Inter-SemiBold'),
+        url('../fonts/inter/Inter-SemiBold.woff2') format('woff2'),
+        url('../fonts/inter/Inter-SemiBold.woff') format('woff');
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Bold'), local('Inter-Bold'),
+        url('../fonts/inter/Inter-Bold.woff2') format('woff2'),
+        url('../fonts/inter/Inter-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: local('MontserratAlternates Regular'), local('MontserratAlternates-Regular'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Regular.woff2') format('woff2'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: local('MontserratAlternates Medium'), local('MontserratAlternates-Medium'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Medium.woff2') format('woff2'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Medium.woff') format('woff');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: local('MontserratAlternates SemiBold'), local('MontserratAlternates-SemiBold'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-SemiBold.woff2') format('woff2'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-SemiBold.woff') format('woff');
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: local('MontserratAlternates Bold'), local('MontserratAlternates-Bold'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Bold.woff2') format('woff2'),
+        url('../fonts/montserrat-alternates/MontserratAlternates-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+        url('../fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/montserrat/Montserrat-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: local('HelveticaNeueCyr Regular'), local('HelveticaNeueCyr-Roman'),
+        url('../fonts/helvetica-neue/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+        url('../fonts/helvetica-neue/HelveticaNeueCyr-Roman.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* reset styles */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+    margin: 0;
+}
+
+picture {
+    display: block;
+}
+
+/* glob */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--main-black);
+    min-width: 320px;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1550px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 32px;
+    background: #ABD43E;
+}
+
+.btn__text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+/* contraindications */
+.contraindications {
+    padding: 15px 0;
+    background-color: var(--contraindications-background);
+}
+
+.contraindications__text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+}
+
+/* header */
+.header__top {
+    padding: 20px 0;
+    border-bottom: 1px solid #DFDFF2;
+}
+
+.header__top-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin-right: 16px;
+}
+
+.header__info {
+    display: flex;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.header__info-block {
+    display: flex;
+    margin-right: 40px;
+}
+
+.header__info-icon {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(171, 212, 62, 0.15);
+    margin-right: 12px;
+}
+
+.header__info-title {
+    color: var(--main-gray);
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+button.header__info-title {
+    transition: color .2s ease;
+}
+
+.header__info-text {
+    color: var(--main-black);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.search-btn {
+    align-self: center;
+    padding-left: 26px;
+    background-image: url("../img/icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    color: var(--dark-gray);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.header__bottom {
+    border-bottom: 1px solid #DFDFF2;
+}
+
+.header__bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__list {
+    display: flex;
+    margin-right: 40px;
+}
+
+.menu__item {
+    margin-right: 40px;
+}
+
+.menu__item:last-child {
+    margin-right: 0;
+}
+
+.menu__link {
+    display: flex;
+    padding: 28px 0;
+}
+
+.menu__link-icon {
+    margin-top: 5px;
+    flex: 0 0 14px;
+    width: 14px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+.menu__link-icon path {
+    stroke: var(--main-black);
+}
+
+.menu__link-text {
+    color: var(--main-black);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    margin-right: 40px;
+}
+
+.social {
+    display: flex;
+    margin-right: 14px;
+}
