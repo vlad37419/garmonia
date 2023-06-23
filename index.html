@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script defer src="/assets/js/build/mask.js"></script>
+    <script defer src="/assets/js/main.js"></script>
     <title>Гармония</title>
 </head>
 
@@ -19,7 +21,6 @@
         </div>
     </div>
     <header class="header">
-
         <div class="header__top">
             <div class="header__top-container container">
                 <a href="/" class="header__logo logo">
@@ -33,7 +34,7 @@
                             <img src="/assets/img/icons/geo.svg" alt="" aria-label="presentation">
                         </picture>
                         <div class="header__info-content">
-                            <button class="header__info-title">
+                            <button class="header__info-title popup-btn" data-path="cities">
                                 <span class="header__info-title-text">
                                     г. Ростов-на-Дону
                                 </span>
@@ -47,7 +48,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="header__info-block">
+                    <div class="header__info-block header__info-block_clock">
                         <picture class="header__info-icon">
                             <img src="/assets/img/icons/clock.svg" alt="" aria-label="presentation">
                         </picture>
@@ -68,14 +69,29 @@
                             <p class="header__info-title">
                                 Круглосуточно:
                             </p>
-                            <a href="tel:+78632261817" class="header__info-text">
+                            <a href="tel:+78632261817" class="header__info-text header__info-text_link">
                                 +7 863 226-18-17
                             </a>
                         </div>
                     </div>
                 </div>
-                <button class="header__search search-btn">
-                    Поиск
+                <button class="header__search search-btn popup-btn" data-path="search">
+                    <svg class="search-btn__icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_777_3705)">
+                            <path
+                                d="M17.7241 16.1932L13.6436 12.1127C14.626 10.8049 15.1563 9.21299 15.1546 7.57728C15.1546 3.39919 11.7554 0 7.57728 0C3.39919 0 0 3.39919 0 7.57728C0 11.7554 3.39919 15.1546 7.57728 15.1546C9.21299 15.1563 10.8049 14.626 12.1127 13.6436L16.1932 17.7241C16.3998 17.9088 16.6692 18.0073 16.9461 17.9996C17.2231 17.9918 17.4865 17.8783 17.6824 17.6824C17.8783 17.4865 17.9918 17.2231 17.9996 16.9461C18.0073 16.6692 17.9088 16.3998 17.7241 16.1932ZM2.16494 7.57728C2.16494 6.50682 2.48237 5.4604 3.07708 4.57034C3.6718 3.68029 4.51709 2.98657 5.50607 2.57693C6.49504 2.16728 7.58328 2.0601 8.63318 2.26893C9.68307 2.47777 10.6475 2.99325 11.4044 3.75018C12.1613 4.5071 12.6768 5.47149 12.8856 6.52138C13.0945 7.57128 12.9873 8.65952 12.5776 9.64849C12.168 10.6375 11.4743 11.4828 10.5842 12.0775C9.69416 12.6722 8.64774 12.9896 7.57728 12.9896C6.14237 12.9879 4.76672 12.4171 3.75208 11.4025C2.73744 10.3878 2.16666 9.01219 2.16494 7.57728Z"
+                                fill="#A5A1B6" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_777_3705">
+                                <rect width="18" height="18" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="search-btn__text">
+                        Поиск
+                    </span>
                 </button>
             </div>
         </div>
@@ -93,6 +109,1266 @@
                                 </svg>
                                 <span class="menu__link-text">Услуги</span>
                             </button>
+                            <ul class="menu__sub-list">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_771_4931)">
+                                                <path
+                                                    d="M5.75041 10.7107L7.00533 11.9656C6.35141 12.7141 5.39499 13.1753 4.35154 13.1753C2.40558 13.1753 0.822266 11.592 0.822266 9.64597C0.822266 8.60268 1.28344 7.64615 2.03204 6.99219L3.28685 8.247C2.86402 8.56928 2.58688 9.07315 2.58688 9.64592C2.58688 10.6204 3.37682 11.4105 4.35149 11.4105C4.92426 11.4105 5.42813 11.1334 5.75041 10.7106V10.7107Z"
+                                                    fill="#869ABF" />
+                                                <path
+                                                    d="M13.1349 3.40766C12.9311 2.1274 11.8954 1.08278 10.6172 0.867369C8.87906 0.572055 7.2959 1.76132 7.03698 3.42757C6.95256 3.97213 6.73581 4.4322 6.40962 4.75808L5.67517 5.49264L4.66273 4.4802C4.22627 4.04364 3.64599 3.80321 3.02829 3.80321C2.41048 3.80321 1.8302 4.04364 1.39384 4.4802L1.39292 4.48113C1.22059 4.65345 1.22059 4.93255 1.39292 5.1049L8.89263 12.6046C9.06229 12.7743 9.34243 12.7786 9.51732 12.6037C10.4187 11.7024 10.4187 10.2358 9.51732 9.33464L8.5047 8.3221L9.23926 7.58775C9.56453 7.26248 10.026 7.04544 10.5739 6.95936C12.2141 6.70292 13.4128 5.15176 13.1348 3.4075L13.1349 3.40766ZM10.087 2.58716C9.48261 2.58716 8.95569 2.9951 8.8053 3.57927C8.74416 3.81663 8.5025 3.95706 8.26811 3.89632C8.03208 3.8356 7.88992 3.59505 7.95063 3.35913C8.20174 2.38506 9.0801 1.70478 10.087 1.70478C10.3308 1.70478 10.5282 1.90224 10.5282 2.14597C10.5281 2.38969 10.3308 2.58716 10.087 2.58716Z"
+                                                    fill="#869ABF" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_771_4931">
+                                                    <rect width="14" height="14" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Врачи для детей
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.0464 4.34768C11.0464 6.30657 9.68237 7.89458 7.99973 7.89458C6.31709 7.89458 4.95303 6.30659 4.95303 4.34768C4.95303 2.38879 6.31709 0.800781 7.99973 0.800781C9.68237 0.800781 11.0464 2.38877 11.0464 4.34768Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M11.865 8.62152L10.3492 7.93945C9.68226 8.48513 8.87893 8.8186 7.98465 8.8186C7.10551 8.8186 6.28702 8.48513 5.62008 7.93945L4.10431 8.62152C2.78551 9.22778 1.93671 10.5617 1.93671 12.032V13.8358C1.93671 14.5937 2.54296 15.1999 3.30084 15.1999H12.6986C13.4565 15.1999 14.0627 14.5937 14.0627 13.8358V12.032C14.0627 10.5617 13.2139 9.22783 11.8649 8.62152H11.865ZM8.75767 13.4417L8.24233 14.0479C8.10594 14.1995 7.87852 14.1995 7.75723 14.0479L7.2419 13.4417C7.16609 13.3659 7.15097 13.2446 7.18131 13.1536L7.77246 10.9406H7.66631C7.52991 10.9406 7.40864 10.8193 7.40864 10.6829V10.1523C7.40864 10.0159 7.52992 9.89466 7.66631 9.89466H8.37872C8.51511 9.89466 8.63639 10.0159 8.63639 10.1523V10.6829C8.63639 10.8193 8.51511 10.9406 8.37872 10.9406H8.27256L8.86371 13.1536C8.86382 13.2447 8.83348 13.3507 8.75767 13.4417Z"
+                                                fill="#869ABF" />
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Врачи для взрослых
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.183 4.30855H11.1655V3.59309C11.1655 2.49125 10.2639 1.58984 9.16221 1.58984H6.84403C5.74219 1.58984 4.84078 2.49135 4.84078 3.59309V4.30855H2.80879C1.92164 4.30855 1.20618 5.02402 1.20618 5.91117V7.3421C2.78025 7.87151 4.7978 8.22924 7.15884 8.30082V8.08622C7.15884 7.85725 7.34489 7.6713 7.57375 7.6713H8.41797C8.64695 7.6713 8.83289 7.85735 8.83289 8.08622V8.30082C11.1796 8.22925 13.2115 7.87151 14.7856 7.3421V5.91117C14.7999 5.02402 14.0844 4.30855 13.1829 4.30855H13.183ZM6.31454 3.57881C6.31454 3.29265 6.55778 3.06367 6.82967 3.06367H9.16211C9.44827 3.06367 9.67724 3.30692 9.67724 3.57881V4.29427H6.31456L6.31454 3.57881Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M8.84728 9.23004C8.84728 9.45901 8.66123 9.64496 8.43236 9.64496H7.57375C7.34478 9.64496 7.15884 9.4589 7.15884 9.23004V9.07263C4.89797 9.01544 2.86605 8.67197 1.20618 8.14258V12.8074C1.20618 13.6946 1.92164 14.41 2.80879 14.41H13.183C14.0702 14.41 14.8 13.6946 14.8 12.8074V8.14258C13.1401 8.672 11.0939 9.00119 8.84733 9.07263L8.84728 9.23004Z"
+                                                fill="#869ABF" />
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Для юридических лиц
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.95624 0.914062H12.0453V2.77396H3.95624V0.914062Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M12.5173 1.84375V3.24653H3.4828V1.84375H2.79999V15.0955H13.2V1.84375H12.5173ZM10.8365 9.17885H8.70919V11.3061H7.291V9.17885H5.16373V7.76067H7.291V5.6334H8.70919V7.76067H10.8365V9.17885Z"
+                                                fill="#869ABF" />
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Диагностика и анализы
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_717_4790)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M3.64706 0.400391H14.3892C14.6604 0.400391 14.8821 0.624307 14.8821 0.898457V7.49211H3.15468V0.898457C3.15468 0.624445 3.37625 0.400391 3.64726 0.400391H3.64706ZM9.06108 14.5274C9.06108 14.8694 9.33937 15.1186 9.67635 15.1492L14.5845 15.5983C14.9216 15.6292 15.2 15.3185 15.2 14.9765V13.18C15.2 12.8377 14.9216 12.5272 14.5845 12.558L9.67635 13.007C9.33925 13.0379 9.06108 13.2868 9.06108 13.629V13.6635H2.42466C1.35181 13.6635 1.34361 12.0766 2.39252 12.0766H5.83913V11.2473H2.39252C0.252948 11.2473 0.274796 14.4929 2.42466 14.4929H9.06108V14.5274ZM13.802 13.1851H14.3388V13.7279H13.802V13.1851ZM13.802 14.4283H14.3388V14.9711H13.802V14.4283ZM14.8819 8.33451V9.13552C14.8819 9.40953 14.6603 9.63359 14.389 9.63359H10.1234V10.6121H10.4498C11.0142 10.6121 11.4757 11.0784 11.4757 11.6487V12.0768H6.56028V11.6487C6.56028 11.0786 7.02201 10.6121 7.58617 10.6121H7.9126V9.63359H3.64698C3.37597 9.63359 3.1544 9.40967 3.1544 9.13552V8.33451H14.8819Z"
+                                                    fill="#869ABF" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_717_4790">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            УЗИ
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.57637 2.40039C5.23363 2.40039 4.95743 2.70161 4.95743 3.07476V4.43225C4.95743 4.80518 5.23366 5.10671 5.57637 5.10671H14.4213C14.7641 5.10671 15.0403 4.80518 15.0403 4.43225V3.07476C15.0403 2.70161 14.7638 2.40039 14.4213 2.40039H5.57637Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M5.57637 6.65234C5.23363 6.65234 4.95743 6.95277 4.95743 7.3268V8.68361C4.95743 9.05764 5.23366 9.35775 5.57637 9.35775H14.4213C14.7641 9.35775 15.0403 9.05764 15.0403 8.68361V7.3268C15.0403 6.95277 14.7638 6.65234 14.4213 6.65234H5.57637Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M5.57637 10.9004C5.23363 10.9004 4.95743 11.2016 4.95743 11.5748V12.9316C4.95743 13.3054 5.23366 13.6059 5.57637 13.6059H14.4213C14.7641 13.6059 15.0403 13.3055 15.0403 12.9316V11.5748C15.0403 11.2018 14.7638 10.9004 14.4213 10.9004H5.57637Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M2.32444 10.9004C1.96618 10.9004 1.62176 11.0432 1.3673 11.2965C1.11406 11.5509 0.971497 11.8943 0.971497 12.2536C0.971497 12.6128 1.11427 12.9564 1.36841 13.2096C1.62199 13.4638 1.96615 13.6064 2.32467 13.6057C3.07163 13.6057 3.6777 13.0006 3.6777 12.2536C3.6777 11.8943 3.53493 11.5509 3.28167 11.2966C3.02709 11.0432 2.68358 10.9004 2.32441 10.9004L2.32444 10.9004Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M2.32444 6.65234C1.96618 6.65234 1.62176 6.79434 1.3673 7.04849C1.11406 7.30174 0.971497 7.64623 0.971497 8.00563C0.971497 8.36381 1.11427 8.70842 1.36841 8.96144C1.62199 9.21513 1.96615 9.35767 2.32467 9.35767C3.07163 9.35767 3.6777 8.75259 3.6777 8.0054C3.6777 7.64612 3.53493 7.30253 3.28167 7.04838C3.02709 6.79524 2.68358 6.65234 2.32441 6.65234H2.32444Z"
+                                                fill="#869ABF" />
+                                            <path
+                                                d="M2.32456 2.40042C1.9663 2.40042 1.62188 2.54331 1.3683 2.79665C1.11416 3.05067 0.971497 3.39417 0.971497 3.75334C0.971497 4.11182 1.11416 4.45633 1.3673 4.71048C1.62177 4.96372 1.96604 5.10662 2.32433 5.10662C2.68361 5.10662 3.02701 4.96374 3.28147 4.70937C3.53472 4.45612 3.6775 4.11163 3.6775 3.75311C3.67761 3.00646 3.07154 2.40042 2.32456 2.40042Z"
+                                                fill="#869ABF" />
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Справки
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.8 10.1849C14.8 12.7106 12.76 14.7992 10.1857 14.7992C9.50573 14.7992 8.8743 14.6535 8.24287 14.3621L12.9057 6.44493C14.12 7.36779 14.8 8.72779 14.8 10.1849ZM10.1857 5.57065C7.66001 5.57065 5.57144 7.61065 5.57144 10.1849C5.57144 11.6421 6.25144 13.0021 7.41716 13.8764L12.08 5.95922C11.4972 5.71636 10.8657 5.57065 10.1857 5.57065ZM4.89144 8.48493H1.20001V11.6421C1.20001 13.3906 2.60858 14.7992 4.35716 14.7992C5.03716 14.7992 5.71715 14.5564 6.25144 14.1678C5.18287 13.0992 4.60001 11.6906 4.60001 10.1849C4.60001 9.60208 4.69715 9.01922 4.89144 8.48493ZM7.56287 5.27922V4.35636C7.56287 2.60779 6.1543 1.19922 4.40573 1.19922C2.60858 1.19922 1.20001 2.60779 1.20001 4.35636V7.5135H5.28001C5.8143 6.54208 6.59144 5.76493 7.56287 5.27922Z"
+                                                fill="#869ABF" />
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Наркология
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_717_4809)">
+                                                <path
+                                                    d="M6.57241 12.2399L8.0066 13.6741C7.25927 14.5295 6.16622 15.0566 4.97371 15.0566C2.74975 15.0566 0.940247 13.2471 0.940247 11.0231C0.940247 9.8308 1.4673 8.73762 2.32285 7.99023L3.75692 9.4243C3.27368 9.79263 2.95695 10.3685 2.95695 11.0231C2.95695 12.1367 3.85973 13.0398 4.97365 13.0398C5.62824 13.0398 6.20409 12.723 6.57241 12.2398V12.2399Z"
+                                                    fill="#869ABF" />
+                                                <path
+                                                    d="M15.0121 3.89419C14.7792 2.43104 13.5955 1.23718 12.1347 0.991C10.1482 0.653498 8.33892 2.01266 8.04302 3.91694C7.94654 4.5393 7.69882 5.06509 7.32603 5.43753L6.48665 6.27702L5.32958 5.11995C4.83077 4.62102 4.16759 4.34624 3.46165 4.34624C2.75558 4.34624 2.0924 4.62103 1.59371 5.11995L1.59266 5.12101C1.39571 5.31795 1.39571 5.63693 1.59266 5.83389L10.1638 14.405C10.3577 14.5989 10.6778 14.6038 10.8777 14.4039C11.9078 13.3738 11.9078 11.6978 10.8777 10.6679L9.72041 9.51069L10.5599 8.67144C10.9316 8.29969 11.4591 8.05165 12.0852 7.95328C13.9597 7.6602 15.3296 5.88745 15.0119 3.89401L15.0121 3.89419ZM11.5287 2.95647C10.838 2.95647 10.2358 3.42269 10.0639 4.09031C9.99408 4.36158 9.71789 4.52208 9.45001 4.45266C9.18027 4.38326 9.0178 4.10835 9.08718 3.83873C9.37416 2.72551 10.378 1.94805 11.5287 1.94805C11.8074 1.94805 12.0329 2.17371 12.0329 2.45226C12.0328 2.7308 11.8074 2.95647 11.5287 2.95647Z"
+                                                    fill="#869ABF" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_717_4809">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="menu__sub-link-text">
+                                            Диагностика и анализы
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                                <svg class="menu__sub-link-arrow" width="7" height="10"
+                                                    viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                                </svg>
+                                            </a>
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Педиатр
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский невролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский уролог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский лор
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский психолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Логопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский эндокринолог
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский хирург
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="#" class="menu__sub-link">
+                                                        <span class="menu__sub-link-text">
+                                                            Детский ортопед
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item menu__item-burger">
                             <button class="menu__link">
@@ -104,6 +1380,140 @@
                                 </svg>
                                 <span class="menu__link-text"> О клинике</span>
                             </button>
+                            <ul class="menu__sub-list">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Педиатр
+                                        </span>
+                                        <svg class="menu__sub-link-arrow" width="7" height="10" viewBox="0 0 7 10"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L1 9" stroke="#869ABF" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Педиатр
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский невролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский уролог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский лор
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский психолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Логопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский эндокринолог
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский хирург
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a href="#" class="menu__sub-link">
+                                                <span class="menu__sub-link-text">
+                                                    Детский ортопед
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский невролог
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский уролог
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский лор
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский психолог
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Логопед
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский эндокринолог
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский хирург
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">
+                                        <span class="menu__sub-link-text">
+                                            Детский ортопед
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item menu__item-burger">
                             <a href="#" class="menu__link">
@@ -139,7 +1549,7 @@
                 </nav>
                 <div class="header__contacts">
                     <ul class="header__socials socials">
-                        <li class="socials__item social">
+                        <li class="socials__item social social_telegram">
                             <a href="#" target="_blank" class="social-link">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -156,7 +1566,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="socials__item social">
+                        <li class="socials__item social social_wa">
                             <a href="#" target="_blank" class="social-link">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +1583,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="socials__item social">
+                        <li class="socials__item social social_vk">
                             <a href="#" target="_blank" class="social-link">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +1602,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="socials__item social">
+                        <li class="socials__item social social_ok">
                             <a href="#" target="_blank" class="social-link">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -204,7 +1614,7 @@
                             </a>
                         </li>
                     </ul>
-                    <button class="header__button btn">
+                    <button class="header__button btn popup-btn" data-path="form">
                         <span class="btn__text">
                             Вызвать врача
                         </span>
@@ -213,6 +1623,282 @@
             </div>
         </div>
     </header>
+    <div data-target="cities" class="cities-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 1L1 17" stroke="#B0BBCE" stroke-width="1.5" />
+                        <path d="M17 17L1 1" stroke="#B0BBCE" stroke-width="1.5" />
+                    </svg>
+                </button>
+                <p class="popup__title">
+                    Выберите город
+                </p>
+                <div class="popup__search">
+                    <label class=" search__label">
+                        <input placeholder="Ваш город" type="text" class="search__input city-filter">
+                    </label>
+                    <button type="submit" class="search__btn">
+                        <img src="/assets/img/icons/search-white.svg" alt="" class="search__btn-icon">
+                    </button>
+                </div>
+                <ul class="popup-city__list scroll-block">
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Ростов-на-Дону
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Москва
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Санкт-Петербург
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Казань
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Омск
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Нижнекамск
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Челябинск
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Москва
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Санкт-Петербург
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Казань
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Омск
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Москва
+                        </a>
+                    </li>
+                    <li class="popup-city__item">
+                        <a href="#" class="popup-city__link">
+                            Ростов-на-Дону
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-target="search" class="search-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 1L1 17" stroke="#B0BBCE" stroke-width="1.5" />
+                        <path d="M17 17L1 1" stroke="#B0BBCE" stroke-width="1.5" />
+                    </svg>
+                </button>
+                <p class="popup__title">
+                    Поиск по сайту
+                </p>
+                <div class="popup__search">
+                    <label class=" search__label">
+                        <input placeholder="Поиск по сайту" type="text" class="search__input city-filter">
+                    </label>
+                    <button type="submit" class="search__btn">
+                        <img src="/assets/img/icons/search-white.svg" alt="" class="search__btn-icon">
+                    </button>
+                </div>
+                <div class="popup__search-result search-result">
+                    <p class="search-result__title">
+                        Результаты поиска (21)
+                    </p>
+                    <ul class="search-result__list scroll-block">
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Какое влияние алкоголь оказывает на организм человека
+                                </p>
+                                <p class="search-result__link-role">
+                                    Статья
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение женского алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Какое влияние алкоголь оказывает на организм человека
+                                </p>
+                                <p class="search-result__link-role">
+                                    Статья
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Какое влияние алкоголь оказывает на организм человека
+                                </p>
+                                <p class="search-result__link-role">
+                                    Статья
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение женского алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Лечение алкоголизма
+                                </p>
+                                <p class="search-result__link-role">
+                                    Услуга
+                                </p>
+                            </a>
+                        </li>
+                        <li class="search-result__item">
+                            <a href="#" class="search-result__link">
+                                <p class="search-result__link-text">
+                                    Какое влияние алкоголь оказывает на организм человека
+                                </p>
+                                <p class="search-result__link-role">
+                                    Статья
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-target="form" class="form-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 1L1 17" stroke="#B0BBCE" stroke-width="1.5" />
+                        <path d="M17 17L1 1" stroke="#B0BBCE" stroke-width="1.5" />
+                    </svg>
+                </button>
+                <form action="#" method="post" class="form-popup__form form-popup form"
+                    novalidate="novalidate" data-additional="Неизвестная форма">
+                    <p class="form-popup__title">
+                        Получите консультацию специалиста бесплатно
+                    </p>
+                    <p class="form-popup__descr">
+                        Оставьте заявку и поговорите с врачом о ваших проблемах и вариантах решения
+                    </p>
+                    <div class="form__wrapper">
+                        <label class="form__label">
+                            <input name="f_name" placeholder="Ваше имя" type="text" class="form__field name">
+                        </label>
+                        <label class="form__label">
+                            <input name="f_phone" placeholder="Ваш телефон" type="tel" class="form__field phone">
+                        </label>
+                        <button type="submit" class="form-popup__btn btn btn-main">
+                            <span class="btn__text">Заказать звонок</span>
+                            <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
+                        </button>
+                    </div>
+                    <p class="form__policy">
+                        Нажимая кнопку «Заказать звонок», вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
