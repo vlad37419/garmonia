@@ -38,6 +38,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         const body = document.querySelector('.body');
+        const header = document.querySelector('.header');
 
         // dropdown menu
         const menuBtns = document.querySelectorAll('button.menu__link');
@@ -115,7 +116,7 @@
                     });
                 });
 
-                // menuClose(mobileMenu);
+                menuClose(header);
 
                 if (currentForm) {
                     currentForm.dataset.additional = el.dataset.additional;
@@ -130,14 +131,15 @@
         });
 
         // mobile-menu
-        const header = document.querySelector('.header');
         const contraindications = document.querySelector('.contraindications');
         const headerTop = document.querySelector('.header__top');
         const headerBottom = document.querySelector('.header__bottom');
         const openMenuBtns = document.querySelectorAll('.open-menu');
         const closeMenuBtns = document.querySelectorAll('.close-menu');
         const menuList = document.querySelector('.menu__list');
+        const menuSubList = document.querySelectorAll('.menu__sub-list');
         const menuItems = document.querySelectorAll('.menu__item-burger');
+        const menuSubItemsAccor = document.querySelectorAll('.menu__sub-item_accor');
         const menuSubListWrapper = document.querySelectorAll('.menu__sub-list-wrapper');
 
         openMenuBtns.forEach(function (openMenuBtn) {
@@ -154,9 +156,12 @@
 
         if (window.innerWidth <= 1024) {
             headerBottom.style.height = window.screen.height + contraindications.scrollHeight - headerTop.scrollHeight + 'px';
-            headerBottom.style.paddingBottom = contraindications.scrollHeight + 'px';
+            headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 'px';
             menuList.classList.add('accor-wrapper');
             menuList.setAttribute('data-accordion-list', '');
+            for (let i = 0; i < menuSubList.length; i += 1) {
+                menuSubList[i].setAttribute('data-accordion-list', '');
+            }
             for (let i = 0; i < menuSubListWrapper.length; i += 1) {
                 menuSubListWrapper[i].classList.add('accor-full');
                 menuSubListWrapper[i].querySelector('.menu__sub-list').setAttribute('data-accordion-content', '');
@@ -166,11 +171,18 @@
                 const menuItem = menuItems[i];
                 menuItem.classList.add('accor');
             }
+            for (let i = 0; i < menuSubItemsAccor.length; i += 1) {
+                const menuSubItemAccor = menuSubItemsAccor[i];
+                menuSubItemAccor.classList.add('accor');
+            }
         } else {
             headerBottom.style.height = 'initial';
             headerBottom.style.paddingBottom = 'initial';
             menuList.classList.remove('accor-wrapper');
             menuList.removeAttribute('data-accordion-list', '');
+            for (let i = 0; i < menuSubList.length; i += 1) {
+                menuSubList[i].removeAttribute('data-accordion-list', '');
+            }
             for (let i = 0; i < menuSubListWrapper.length; i += 1) {
                 menuSubListWrapper[i].classList.remove('accor-full');
                 menuSubListWrapper[i].querySelector('.menu__sub-list').removeAttribute('data-accordion-content', '');
@@ -180,14 +192,21 @@
                 const menuItem = menuItems[i];
                 menuItem.classList.remove('accor');
             }
+            for (let i = 0; i < menuSubItemsAccor.length; i += 1) {
+                const menuSubItemAccor = menuSubItemsAccor[i];
+                menuSubItemAccor.classList.remove('accor');
+            }
         }
 
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 1024) {
                 headerBottom.style.height = window.screen.height + contraindications.scrollHeight - headerTop.scrollHeight + 'px';
-                headerBottom.style.paddingBottom = contraindications.scrollHeight + 'px';
+                headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 'px';
                 menuList.classList.add('accor-wrapper');
                 menuList.setAttribute('data-accordion-list', '');
+                for (let i = 0; i < menuSubList.length; i += 1) {
+                    menuSubList[i].setAttribute('data-accordion-list', '');
+                }
                 for (let i = 0; i < menuSubListWrapper.length; i += 1) {
                     menuSubListWrapper[i].classList.add('accor-full');
                     menuSubListWrapper[i].querySelector('.menu__sub-list').setAttribute('data-accordion-content', '');
@@ -197,11 +216,18 @@
                     const menuItem = menuItems[i];
                     menuItem.classList.add('accor');
                 }
+                for (let i = 0; i < menuSubItemsAccor.length; i += 1) {
+                    const menuSubItemAccor = menuSubItemsAccor[i];
+                    menuSubItemAccor.classList.add('accor');
+                }
             } else {
                 headerBottom.style.height = 'initial';
                 headerBottom.style.paddingBottom = 'initial';
                 menuList.classList.remove('accor-wrapper');
                 menuList.removeAttribute('data-accordion-list', '');
+                for (let i = 0; i < menuSubList.length; i += 1) {
+                    menuSubList[i].removeAttribute('data-accordion-list', '');
+                }
                 for (let i = 0; i < menuSubListWrapper.length; i += 1) {
                     menuSubListWrapper[i].classList.remove('accor-full');
                     menuSubListWrapper[i].querySelector('.menu__sub-list').removeAttribute('data-accordion-content', '');
@@ -210,6 +236,10 @@
                 for (let i = 0; i < menuItems.length; i += 1) {
                     const menuItem = menuItems[i];
                     menuItem.classList.remove('accor');
+                }
+                for (let i = 0; i < menuSubItemsAccor.length; i += 1) {
+                    const menuSubItemAccor = menuSubItemsAccor[i];
+                    menuSubItemAccor.classList.remove('accor');
                 }
             }
         });
