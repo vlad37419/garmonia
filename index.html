@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/build/swiper.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <script defer src="/assets/js/build/swiper.js"></script>
     <script defer src="/assets/js/build/mask.js"></script>
     <script defer src="/assets/js/main.js"></script>
     <title>Гармония</title>
@@ -1878,38 +1880,236 @@
     </header>
     <main class="main">
         <section class="promo">
-            <div class="promo__container container">
+            <div class="promo__container">
                 <div class="promo__slider swiper">
                     <div class="promo__slider-wrapper swiper-wrapper">
                         <div class="promo__slide banner swiper-slide">
-                            <div class="banner__content">
-                                <p class="banner__sticker">
-                                    Акция
-                                </p>
-                                <p class="banner__title">
-                                    Скидка на первичный прием в клинике
-                                </p>
-                                <p class="banner__descr">
-                                    Скидка 15% на первичную консультацию врача, по специализации которого вы еще ни разу
-                                    не были!
-                                </p>
-                                <div class="banner__btn-group">
-                                    <a href="" type="submit" class="banner__btn btn btn-main">
-                                        <span class="btn__text">Узнать подробнее</span>
-                                        <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
-                                    </a>
-                                    <button type="submit" class="banner__btn btn-default">
-                                        <span class="btn__text">Получить консультацию</span>
-                                        <svg class="btn__icon" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 4H12M12 4L9 1M12 4L9 7" stroke="#ABD43E" stroke-width="1.5" />
-                                        </svg>
-                                    </button>
+                            <div class="banner__container container">
+                                <div class="banner__content">
+                                    <p class="banner__sticker">
+                                        Акция
+                                    </p>
+                                    <p class="banner__title page-title">
+                                        Скидка на первичный прием в клинике
+                                    </p>
+                                    <p class="banner__descr">
+                                        Скидка <b>15%</b> на первичную консультацию врача, по специализации которого вы
+                                        еще
+                                        ни разу
+                                        не были!
+                                    </p>
+                                    <div class="banner__btn-group">
+                                        <a href="" class="banner__btn btn btn-main">
+                                            <span class="btn__text">Узнать подробнее</span>
+                                            <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
+                                        </a>
+                                        <button class="banner__btn btn-default popup-btn" data-path="form">
+                                            <span class="btn__text">Получить консультацию</span>
+                                            <svg class="btn__icon" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4H12M12 4L9 1M12 4L9 7" stroke="#ABD43E"
+                                                    stroke-width="1.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="banner__preview">
+                                    <div class="banner__decor">
+                                        <img src="/assets/img/sections/promo/circle-big.svg" alt=""
+                                            class="banner__circle banner__circle_big">
+                                        <img src="/assets/img/sections/promo/circle.svg" alt="" class="banner__circle">
+                                        <img src="/assets/img/sections/promo/circle-small.svg" alt=""
+                                            class="banner__circle banner__circle_small">
+                                    </div>
+                                    <picture class="banner__picture">
+                                        <img src="/assets/img/sections/promo/1.png" alt="" class="banner__img">
+                                    </picture>
                                 </div>
                             </div>
-                            <picture class="banner__picture">
-                                <img src="/assets/img/sections/promo/1.png" alt="" class="banner__img">
-                            </picture>
+                        </div>
+                        <div class="promo__slide banner swiper-slide">
+                            <div class="banner__container container">
+                                <div class="banner__content">
+                                    <p class="banner__sticker">
+                                        Акция
+                                    </p>
+                                    <p class="banner__title page-title">
+                                        Скидка на первичный прием в клинике 2
+                                    </p>
+                                    <p class="banner__descr">
+                                        Скидка <b>15%</b> на первичную консультацию врача, по специализации которого вы
+                                        еще
+                                        ни разу
+                                        не были!
+                                    </p>
+                                    <div class="banner__btn-group">
+                                        <a href="" class="banner__btn btn btn-main">
+                                            <span class="btn__text">Узнать подробнее</span>
+                                            <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
+                                        </a>
+                                        <button class="banner__btn btn-default popup-btn" data-path="form">
+                                            <span class="btn__text">Получить консультацию</span>
+                                            <svg class="btn__icon" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4H12M12 4L9 1M12 4L9 7" stroke="#ABD43E"
+                                                    stroke-width="1.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="banner__preview">
+                                    <div class="banner__decor">
+                                        <img src="/assets/img/sections/promo/circle-big.svg" alt=""
+                                            class="banner__circle banner__circle_big">
+                                        <img src="/assets/img/sections/promo/circle.svg" alt="" class="banner__circle">
+                                        <img src="/assets/img/sections/promo/circle-small.svg" alt=""
+                                            class="banner__circle banner__circle_small">
+                                    </div>
+                                    <picture class="banner__picture">
+                                        <img src="/assets/img/sections/promo/1.png" alt="" class="banner__img">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo__slide banner swiper-slide">
+                            <div class="banner__container container">
+                                <div class="banner__content">
+                                    <p class="banner__sticker">
+                                        Акция
+                                    </p>
+                                    <p class="banner__title page-title">
+                                        Скидка на первичный прием в клинике 3
+                                    </p>
+                                    <p class="banner__descr">
+                                        Скидка <b>15%</b> на первичную консультацию врача, по специализации которого вы
+                                        еще
+                                        ни разу
+                                        не были!
+                                    </p>
+                                    <div class="banner__btn-group">
+                                        <a href="" class="banner__btn btn btn-main">
+                                            <span class="btn__text">Узнать подробнее</span>
+                                            <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
+                                        </a>
+                                        <button class="banner__btn btn-default popup-btn" data-path="form">
+                                            <span class="btn__text">Получить консультацию</span>
+                                            <svg class="btn__icon" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4H12M12 4L9 1M12 4L9 7" stroke="#ABD43E"
+                                                    stroke-width="1.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="banner__preview">
+                                    <div class="banner__decor">
+                                        <img src="/assets/img/sections/promo/circle-big.svg" alt=""
+                                            class="banner__circle banner__circle_big">
+                                        <img src="/assets/img/sections/promo/circle.svg" alt="" class="banner__circle">
+                                        <img src="/assets/img/sections/promo/circle-small.svg" alt=""
+                                            class="banner__circle banner__circle_small">
+                                    </div>
+                                    <picture class="banner__picture">
+                                        <img src="/assets/img/sections/promo/1.png" alt="" class="banner__img">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo__slider-navigation">
+                        <div class="promo__slider-btns slider-btns">
+                            <button class="promo__slider-btn promo__slider-btn_prev slider-btn slider-btn_prev">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" stroke="#ABD43E" stroke-width="1.5"></path>
+                                </svg>
+                            </button>
+                            <button class="promo__slider-btn promo__slider-btn_next slider-btn slider-btn_next">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" stroke="#ABD43E" stroke-width="1.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="promo__slider-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="advantages section-offset">
+            <div class="advantages__container container">
+                <div class="advantages__row row">
+                    <div class="advantages__col advantage col-5">
+                        <picture class="advantage__picture">
+                            <img src="/assets/img/sections/advantages/1.svg" alt="" class="advantage__icon">
+                        </picture>
+                        <p class="advantage__text">
+                            Более 65 лет успешной работы
+                        </p>
+                    </div>
+                    <div class="advantages__col advantage col-5">
+                        <picture class="advantage__picture">
+                            <img src="/assets/img/sections/advantages/2.svg" alt="" class="advantage__icon">
+                        </picture>
+                        <p class="advantage__text">
+                            Круглосуточный стационар
+                        </p>
+                    </div>
+                    <div class="advantages__col advantage col-5">
+                        <picture class="advantage__picture">
+                            <img src="/assets/img/sections/advantages/3.svg" alt="" class="advantage__icon">
+                        </picture>
+                        <p class="advantage__text">
+                            Оборудование экспертного класса
+                        </p>
+                    </div>
+                    <div class="advantages__col advantage col-5">
+                        <picture class="advantage__picture">
+                            <img src="/assets/img/sections/advantages/4.svg" alt="" class="advantage__icon">
+                        </picture>
+                        <p class="advantage__text">
+                            Более 20 check-up программ
+                        </p>
+                    </div>
+                    <div class="advantages__col advantage col-5">
+                        <picture class="advantage__picture">
+                            <img src="/assets/img/sections/advantages/5.svg" alt="" class="advantage__icon">
+                        </picture>
+                        <p class="advantage__text">
+                            Гарантия анонимного обращения
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="extra section-offset">
+            <div class="extra__container container">
+                <div class="extra__row">
+                    <picture class="extra__picture">
+                        <img src="/assets/img/sections/extra/1.png" alt="" class="extra__img">
+                    </picture>
+                    <div class="extra__content">
+                        <h2 class="extra__title section-title">
+                            Медицинские осмотры по достпным ценам
+                        </h2>
+                        <div class="extra__content-body content-body">
+                            <ul>
+                                <li>Медицинские книжки</li>
+                                <li>Медосмотры, профосмотры</li>
+                                <li>Прием специалистов</li>
+                                <li>Справки на права</li>
+                                <li>Лабораторные исследования</li>
+                                <li>Абитуриентам для поступления</li>
+                            </ul>
+                        </div>
+                        <div class="extra__content-bottom">
+                            <p class="extra__price">От <span class="extra__price_size">5000 ₽</span></p>
+                            <a href="#" class="extra__btn btn btn-main">
+                                <span class="btn__text">
+                                    Узнать подробнее
+                                </span>
+                                <img src="/assets/img/icons/arrow-btn.svg" alt="" class="btn__icon">
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -340,6 +340,57 @@
             });
         }
 
+        const promoSliderCheck = document.querySelectorAll('.promo__slider');
+
+        if (promoSliderCheck.length > 0) {
+            const promoSlider = new Swiper('.promo__slider', {
+                loop: true,
+                autoHeight: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: '.promo__slider-pagination',
+                    bulletClass: 'swiper-pagination-bullet-custom',
+                    bulletActiveClass: 'swiper-pagination-bullet-custom--active',
+                    renderBullet: function (index, className) {
+                        return `<div class="${className}" data-index="${index}">
+                        <svg viewbox="0 0 20 20">
+                            <circle r="9" cx="10" cy="10" fill="none" stroke-width="2" stroke="#ABD43E"/>
+                        </svg>
+                      </div>`
+                    },
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.promo__slider-btn_next',
+                    prevEl: '.promo__slider-btn_prev',
+                },
+                on: {
+                    init: function () {
+                        const _self = this;
+
+                        _self.el.style.setProperty('--delay', _self.params.autoplay.delay);
+
+                        _self.el.addEventListener('mouseenter', function () {
+                            _self.el.classList.add('swiper--pause');
+                            _self.autoplay.pause();
+                        });
+
+                        _self.el.addEventListener('mouseleave', function () {
+                            _self.el.classList.remove('swiper--pause');
+                            _self.autoplay.resume();
+                        });
+                    }
+                }
+            });
+        }
+
         initPhoneMask();
     });
 })();
