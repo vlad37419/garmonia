@@ -1,4 +1,10 @@
 (() => {
+    function getHeight(el) {
+        if (el) {
+            return el.offsetHeight;
+        }
+    }
+
     function setWidthScrollBar() {
         let div = document.createElement('div');
 
@@ -275,7 +281,6 @@
             }
 
             open(section) {
-                console.log(section);
                 const accordion = section.querySelector(`[${ACCORDION_CONTENT}`).closest('.accor');
                 const accordionContent = section.querySelector(`[${ACCORDION_CONTENT}`)
                 const accordionList = accordionContent.querySelector(`[${ACCORDION_LIST}`)
@@ -332,7 +337,6 @@
         }
 
         const accorWrapperList = document.querySelectorAll('.accor-wrapper');
-        console.log(accorWrapperList);
 
         if (accorWrapperList.length > 0) {
             accorWrapperList.forEach(function (elem) {
@@ -340,6 +344,7 @@
             });
         }
 
+        // promo slider
         const promoSliderCheck = document.querySelectorAll('.promo__slider');
 
         if (promoSliderCheck.length > 0) {
@@ -390,6 +395,151 @@
                 }
             });
         }
+
+        // more text
+        let windowWidth = document.body.clientWidth;
+        const moreBtnsList = document.querySelectorAll('.more-text-btn');
+        const moreTextList = document.querySelectorAll('.more-text');
+
+        if (windowWidth <= 575) {
+            if (moreTextList.length > 0) {
+                moreTextList.forEach(function (moreText) {
+                    const textWrapper = moreText.querySelector('.more-text-wrapper');
+                    const textContent = moreText.querySelector('.more-text-content');
+                    const heightTextContent = getHeight(textContent);
+                    const btnMore = moreText.querySelector('.more-text-btn');
+
+                    if (heightTextContent <= 485) {
+                        btnMore.style.display = 'none';
+                        textWrapper.style.height = 'auto';
+                    } else {
+                        btnMore.style.display = 'flex';
+                        textWrapper.style.height = 485 + 'px';
+                        btnMore.textContent = 'Читать полностью';
+                    }
+                });
+            }
+        } else {
+            if (moreTextList.length > 0) {
+                moreTextList.forEach(function (moreText) {
+                    const textWrapper = moreText.querySelector('.more-text-wrapper');
+                    const btnMore = moreText.querySelector('.more-text-btn');
+
+                    btnMore.style.display = 'none';
+                    textWrapper.style.height = 'auto';
+                });
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (windowWidth != document.body.clientWidth) {
+                if (document.body.clientWidth <= 575) {
+                    if (moreTextList.length > 0) {
+                        moreTextList.forEach(function (moreText) {
+                            const textWrapper = moreText.querySelector('.more-text-wrapper');
+                            const textContent = moreText.querySelector('.more-text-content');
+                            const heightTextContent = getHeight(textContent);
+                            const btnMore = moreText.querySelector('.more-text-btn');
+
+                            if (heightTextContent <= 485) {
+                                btnMore.style.display = 'none';
+                                textWrapper.style.height = 'auto';
+                            } else {
+                                btnMore.style.display = 'flex';
+                                textWrapper.style.height = 485 + 'px';
+                                btnMore.textContent = 'Читать полностью';
+                            }
+                        });
+                    }
+                } else {
+                    if (moreTextList.length > 0) {
+                        moreTextList.forEach(function (moreText) {
+                            const textWrapper = moreText.querySelector('.more-text-wrapper');
+                            const btnMore = moreText.querySelector('.more-text-btn');
+
+                            btnMore.style.display = 'none';
+                            textWrapper.style.height = 'auto';
+                        });
+                    }
+                }
+                windowWidth = document.body.clientWidth;
+            }
+        });
+
+        if (moreBtnsList.length > 0) {
+            moreBtnsList.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const textWrapper = btn.closest('.more-text').querySelector('.more-text-wrapper');
+                    const textContent = btn.closest('.more-text').querySelector('.more-text-content');
+                    const heightTextWrapper = getHeight(textWrapper);
+                    const heightTextContent = getHeight(textContent);
+                    if (heightTextContent > heightTextWrapper) {
+                        textWrapper.style.height = heightTextContent + 'px';
+                        btn.textContent = 'Скрыть';
+                    } else {
+                        textWrapper.style.height = 485 + 'px';
+                        btn.textContent = 'Читать полностью';
+                    }
+                });
+            })
+        }
+
+        // programs slider
+        const programsSliderCheck = document.querySelectorAll('.programs__slider');
+
+        if (programsSliderCheck.length > 0) {
+            const programsSlider = new Swiper('.programs__slider', {
+                navigation: {
+                    nextEl: '.programs__slider-btn_next',
+                    prevEl: '.programs__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    767: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    }
+                },
+            });
+        }
+
+        // promotions slider
+        const promotionsSliderCheck = document.querySelectorAll('.promotions__slider');
+
+        if (programsSliderCheck.length > 0) {
+            const promotionsSlider = new Swiper('.promotions__slider', {
+                navigation: {
+                    nextEl: '.promotions__slider-btn_next',
+                    prevEl: '.promotions__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1440: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    }
+                },
+            });
+        }
+
 
         initPhoneMask();
     });
