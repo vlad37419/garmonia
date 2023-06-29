@@ -540,6 +540,73 @@
             });
         }
 
+        // Добавить завтра
+        // rating
+        const ratings = document.querySelectorAll('.rating');
+
+        if (ratings.length > 0) {
+            initRatings();
+        }
+
+        function initRatings() {
+            let ratingActive, ratingValue, ratingText;
+
+            for (let i = 0; i < ratings.length; i += 1) {
+                const rating = ratings[i];
+                initRating(rating);
+            }
+        }
+
+        function initRating(rating) {
+            initRatingVars(rating);
+
+            setRatingActiveWidth();
+
+            if (rating.classList.contains('rating__set')) {
+                setRating(rating);
+            }
+        }
+
+        function initRatingVars(rating) {
+            ratingActive = rating.querySelector('.rating__active');
+            ratingValue = rating.querySelector('.rating__value');
+            ratingText = rating.querySelector('.rating__text');
+        }
+
+        function setRatingActiveWidth(index = ratingValue.innerHTML.replace(',', '.')) {
+            const ratingActiveWidth = index / 0.05;
+            ratingActive.style.width = `${ratingActiveWidth}%`;
+            ratingText.innerHTML = `Рекомендуют ${Math.round(ratingActiveWidth)}%`
+        }
+
+        function setRating(rating) {
+            const ratingItems = rating.querySelectorAll('.rating__item');
+
+            for (let i = 0; i < ratingItems.length; i += 1) {
+                const ratingItem = ratingItems[i];
+
+                ratingItem.addEventListener('mouseenter', (e) => {
+                    initRatingVars(rating);
+
+                    setRatingActiveWidth(ratingItem.value);
+                });
+
+                ratingItem.addEventListener('mouseleave', (e) => {
+                    setRatingActiveWidth();
+                });
+
+                ratingItem.addEventListener('click', (e) => {
+                    ratingItems.forEach((elem) => {
+                        elem.style.pointerEvents = 'all';
+                    });
+                    ratingItem.style.pointerEvents = 'none';
+                    initRatingVars(rating);
+
+                    ratingValue.innerHTML = i + 1;
+                    setRatingActiveWidth();
+                });
+            }
+        }
 
         initPhoneMask();
     });
