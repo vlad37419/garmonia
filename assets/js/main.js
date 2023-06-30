@@ -502,7 +502,7 @@
                         slidesPerView: 2,
                         spaceBetween: 15,
                     },
-                    767: {
+                    768: {
                         slidesPerView: 3,
                         spaceBetween: 15,
                     },
@@ -517,7 +517,7 @@
         // promotions slider
         const promotionsSliderCheck = document.querySelectorAll('.promotions__slider');
 
-        if (programsSliderCheck.length > 0) {
+        if (promotionsSliderCheck.length > 0) {
             const promotionsSlider = new Swiper('.promotions__slider', {
                 navigation: {
                     nextEl: '.promotions__slider-btn_next',
@@ -540,7 +540,75 @@
             });
         }
 
-        // Добавить завтра
+        // documents slider
+        const documentsSliderCheck = document.querySelectorAll('.documents__slider');
+
+        if (documentsSliderCheck.length > 0) {
+            const documentsSlider = new Swiper('.documents__slider', {
+                navigation: {
+                    nextEl: '.documents__slider-btn_next',
+                    prevEl: '.documents__slider-btn_prev',
+                },
+                pagination: {
+                    el: ".documents__pagination",
+                    type: "fraction",
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1.35,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    }
+                },
+            });
+        }
+
+        // documents fancybox
+        Fancybox.bind('[data-fancybox="documents"]', {
+            placeFocusBack: false,
+        });
+
+        // specialists slider
+        const specialistsSliderCheck = document.querySelectorAll('.specialists__slider');
+
+        if (specialistsSliderCheck.length > 0) {
+            const specialistsSlider = new Swiper('.specialists__slider', {
+                navigation: {
+                    nextEl: '.specialists__slider-btn_next',
+                    prevEl: '.specialists__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1.25,
+                        spaceBetween: 15,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1440: {
+                        slidesPerView: 5,
+                        spaceBetween: 15,
+                    }
+                },
+            });
+        }
+
         // rating
         const ratings = document.querySelectorAll('.rating');
 
@@ -607,6 +675,60 @@
                 });
             }
         }
+
+        // reviews slider
+        const reviewsSliderCheck = document.querySelectorAll('.reviews__slider');
+
+        if (reviewsSliderCheck.length > 0) {
+            const reviewsSlider = new Swiper('.reviews__slider', {
+                navigation: {
+                    nextEl: '.reviews__slider-btn_next',
+                    prevEl: '.reviews__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                        autoHeight: true,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                },
+            });
+        }
+
+        // news slider
+        const newsSliderCheck = document.querySelectorAll('.reviews__slider');
+
+        if (newsSliderCheck.length > 0) {
+            const newsSlider = new Swiper('.news__slider', {
+                navigation: {
+                    nextEl: '.news__slider-btn_next',
+                    prevEl: '.news__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1.15,
+                        spaceBetween: 10,
+                    },
+                    575: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1440: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                },
+            });
+        }
+
 
         initPhoneMask();
     });
