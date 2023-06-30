@@ -9,10 +9,36 @@
     <link rel="stylesheet" href="assets/css/build/fancybox.css">
     <link rel="stylesheet" href="assets/css/build/swiper.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script defer src="assets/js/build/fancybox.js"></script>
     <script defer src="assets/js/build/swiper.js"></script>
     <script defer src="assets/js/build/mask.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            ymaps.ready(init);
+
+            function init() {
+                const map = document.querySelector('#map');
+
+                if (map) {
+                    var myMap = new ymaps.Map("map", {
+                        center: [45.126945, 38.946693],
+                        zoom: 14,
+                    });
+
+                    var myPlacemark = new ymaps.Placemark([45.126945, 38.946693], {}, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'assets/img/icons/map-marker.svg',
+                        iconImageSize: [80, 80],
+                    });
+
+                    myMap.geoObjects.add(myPlacemark);
+                    myMap.behaviors.disable('scrollZoom');
+                }
+            }
+        });
+    </script>
     <title>Гармония</title>
 </head>
 
@@ -4334,11 +4360,11 @@
                 </div>
             </div>
         </section>
-        <section class="articles">
+        <section class="articles section-offset">
             <div class="articles__container container">
                 <div class="articles__top slider-top">
                     <h2 class="articles__title section-title">
-                        Последние новости клиники
+                        Полезные статьи
                     </h2>
                     <div class="articles__navigation slider-btns">
                         <button class="articles__slider-btn articles__slider-btn_prev slider-btn slider-btn_prev">
@@ -4357,7 +4383,146 @@
                 </div>
                 <div class="articles__slider swiper">
                     <div class="articles__slider-wrapper swiper-wrapper">
-                        
+                        <a href="#" class="articles__slide article swiper-slide">
+                            <div class="article__preview">
+                                <picture class="article__picture">
+                                    <img src="assets/img/sections/articles/1.png" alt="" class="article__img">
+                                </picture>
+                                <p class="article__date">
+                                    24.12.2023
+                                </p>
+                            </div>
+                            <div class="article__content">
+                                <p class="article__title">
+                                    Первая помощь при отравлении алкоголем
+                                </p>
+                                <p class="article__descr">
+                                    Печень — главный орган, который отвечает за переработку этанола, инактивацию
+                                    спиртного. Она берёт на себя всю основную работу. Однако ресурсы организма не ...
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="articles__slide article swiper-slide">
+                            <div class="article__preview">
+                                <picture class="article__picture">
+                                    <img src="assets/img/sections/articles/2.png" alt="" class="article__img">
+                                </picture>
+                                <p class="article__date">
+                                    24.12.2023
+                                </p>
+                            </div>
+                            <div class="article__content">
+                                <p class="article__title">
+                                    Послеродовая депрессия
+                                </p>
+                                <p class="article__descr">
+                                    Постепенно способность компенсировать поступление алкоголя в организм утрачивается,
+                                    начинаются проблемы. Поражение тканей крупнейшей железы, которое...
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="articles__slide article swiper-slide">
+                            <div class="article__preview">
+                                <picture class="article__picture">
+                                    <img src="assets/img/sections/articles/3.png" alt="" class="article__img">
+                                </picture>
+                                <p class="article__date">
+                                    24.12.2023
+                                </p>
+                            </div>
+                            <div class="article__content">
+                                <p class="article__title">
+                                    Детоксикация организма
+                                </p>
+                                <p class="article__descr">
+                                    Это название обобщённое для группы патологических состояний, создающих риски для
+                                    здоровья. Диагностикой и лечением расстройства занимаются врачи...
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="articles__slide article swiper-slide">
+                            <div class="article__preview">
+                                <picture class="article__picture">
+                                    <img src="assets/img/sections/articles/1.png" alt="" class="article__img">
+                                </picture>
+                                <p class="article__date">
+                                    24.12.2023
+                                </p>
+                            </div>
+                            <div class="article__content">
+                                <p class="article__title">
+                                    Первая помощь при отравлении алкоголем
+                                </p>
+                                <p class="article__descr">
+                                    Печень — главный орган, который отвечает за переработку этанола, инактивацию
+                                    спиртного. Она берёт на себя всю основную работу. Однако ресурсы организма не ...
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contacts section-offset">
+            <div class="contacts__container container">
+                <h2 class="contacts__title section-title">
+                    Как к нам попасть
+                </h2>
+                <div class="contacts__content">
+                    <div id="map" class="contacts__map"></div>
+                    <div class="contacts__info">
+                        <button class="contacts__info-item contacts-item popup-btn" data-path="cities">
+                            <div class="contacts-item__img-wrapper">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.5007 11.9818C11.81 11.9818 11.1476 11.7074 10.6592 11.219C10.1709 10.7307 9.89648 10.0683 9.89648 9.3776C9.89648 8.68694 10.1709 8.02456 10.6592 7.53618C11.1476 7.0478 11.81 6.77344 12.5007 6.77344C13.1913 6.77344 13.8537 7.0478 14.3421 7.53618C14.8305 8.02456 15.1048 8.68694 15.1048 9.3776C15.1048 9.71959 15.0375 10.0582 14.9066 10.3742C14.7757 10.6901 14.5839 10.9772 14.3421 11.219C14.1003 11.4608 13.8132 11.6527 13.4972 11.7835C13.1813 11.9144 12.8426 11.9818 12.5007 11.9818ZM12.5007 2.08594C10.5668 2.08594 8.71212 2.85416 7.34466 4.22162C5.97721 5.58907 5.20898 7.44373 5.20898 9.3776C5.20898 14.8464 12.5007 22.9193 12.5007 22.9193C12.5007 22.9193 19.7923 14.8464 19.7923 9.3776C19.7923 7.44373 19.0241 5.58907 17.6566 4.22162C16.2892 2.85416 14.4345 2.08594 12.5007 2.08594Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <p class="contacts-item__text">
+                                г. Ростов-на-Дону, ул. Красноармейская, 170, 2-й этаж
+                            </p>
+                        </button>
+                        <a href="tel:+78632261817" class="contacts__info-item contacts-item">
+                            <div class="contacts-item__img-wrapper">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20.1384 15.9567L17.4519 15.65C17.136 15.6129 16.8158 15.6478 16.5153 15.7523C16.2149 15.8567 15.942 16.0278 15.7173 16.2529L13.7711 18.199C10.7685 16.6719 8.32804 14.2314 6.80097 11.2288L8.75769 9.2721C9.21249 8.8173 9.43461 8.18268 9.36057 7.53749L9.05384 4.87211C8.99388 4.35615 8.74626 3.88025 8.35813 3.53503C7.97001 3.18981 7.46849 2.99938 6.94905 3H5.11925C3.92407 3 2.92985 3.99423 3.00389 5.18942C3.56446 14.2221 10.7884 21.4355 19.8105 21.9961C21.0057 22.0702 21.9999 21.0759 21.9999 19.8807V18.0509C22.0105 16.9827 21.2066 16.0836 20.1384 15.9567Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <p class="contacts-item__text">
+                                +7 863 226-18-17
+                            </p>
+                        </a>
+                        <a href="mailto:info@garmonia-clinica.ru" class="contacts__info-item contacts-item">
+                            <div class="contacts-item__img-wrapper">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20.1384 15.9567L17.4519 15.65C17.136 15.6129 16.8158 15.6478 16.5153 15.7523C16.2149 15.8567 15.942 16.0278 15.7173 16.2529L13.7711 18.199C10.7685 16.6719 8.32804 14.2314 6.80097 11.2288L8.75769 9.2721C9.21249 8.8173 9.43461 8.18268 9.36057 7.53749L9.05384 4.87211C8.99388 4.35615 8.74626 3.88025 8.35813 3.53503C7.97001 3.18981 7.46849 2.99938 6.94905 3H5.11925C3.92407 3 2.92985 3.99423 3.00389 5.18942C3.56446 14.2221 10.7884 21.4355 19.8105 21.9961C21.0057 22.0702 21.9999 21.0759 21.9999 19.8807V18.0509C22.0105 16.9827 21.2066 16.0836 20.1384 15.9567Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <p class="contacts-item__text">
+                                info@garmonia-clinica.ru
+                            </p>
+                        </a>
+                        <div href="mailto:info@garmonia-clinica.ru" class="contacts__info-item contacts-item">
+                            <div class="contacts-item__img-wrapper">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.4905 3C7.2465 3 3 7.256 3 12.5C3 17.744 7.2465 22 12.4905 22C17.744 22 22 17.744 22 12.5C22 7.256 17.744 3 12.4905 3ZM15.6255 16.9745L11.55 12.8895V7.75H13.45V12.1105L16.9745 15.635L15.6255 16.9745Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <p class="contacts-item__text">
+                                Ежедневно, без выходных
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

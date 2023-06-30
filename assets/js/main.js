@@ -162,7 +162,7 @@
 
         if (window.innerWidth <= 1024) {
             headerBottom.style.height = window.screen.height + contraindications.scrollHeight - headerTop.scrollHeight + 'px';
-            headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 'px';
+            headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 150 + 'px';
             menuList.classList.add('accor-wrapper');
             menuList.setAttribute('data-accordion-list', '');
             for (let i = 0; i < menuSubList.length; i += 1) {
@@ -207,7 +207,7 @@
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 1024) {
                 headerBottom.style.height = window.screen.height + contraindications.scrollHeight - headerTop.scrollHeight + 'px';
-                headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 'px';
+                headerBottom.style.paddingBottom = contraindications.scrollHeight + headerTop.scrollHeight + 150 + 'px';
                 menuList.classList.add('accor-wrapper');
                 menuList.setAttribute('data-accordion-list', '');
                 for (let i = 0; i < menuSubList.length; i += 1) {
@@ -729,6 +729,32 @@
             });
         }
 
+        // articles slider
+        const articlesSliderCheck = document.querySelectorAll('.articles__slider');
+
+        if (articlesSliderCheck.length > 0) {
+            const articlesSlider = new Swiper('.articles__slider', {
+                navigation: {
+                    nextEl: '.articles__slider-btn_next',
+                    prevEl: '.articles__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                        autoHeight: true,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                },
+            });
+        }
 
         initPhoneMask();
     });
