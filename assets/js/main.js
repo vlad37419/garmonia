@@ -757,5 +757,6 @@
         }
 
         initPhoneMask();
+        AOS.init();
     });
 })();

@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/build/aos.css">
     <link rel="stylesheet" href="assets/css/build/fancybox.css">
     <link rel="stylesheet" href="assets/css/build/swiper.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script defer src="assets/js/build/aos.js"></script>
     <script defer src="assets/js/build/fancybox.js"></script>
     <script defer src="assets/js/build/swiper.js"></script>
     <script defer src="assets/js/build/mask.js"></script>
@@ -1907,13 +1909,14 @@
         </div>
     </header>
     <main class="main">
-        <section class="promo">
+        <section class="promo" data-aos="fade-up" data-aos-duration="600">
             <div class="promo__container">
                 <div class="promo__slider swiper">
                     <div class="promo__slider-wrapper swiper-wrapper">
                         <div class="promo__slide banner swiper-slide">
                             <div class="banner__container container">
-                                <div class="banner__content">
+                                <div class="banner__content" data-aos="fade-right" data-aos-duration="600"
+                                    data-aos-delay="300">
                                     <p class="banner__sticker">
                                         Акция
                                     </p>
@@ -1941,7 +1944,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="banner__preview">
+                                <div class="banner__preview" data-aos="fade-bottom" data-aos-duration="600"
+                                    data-aos-delay="300">
                                     <div class="banner__decor">
                                         <img src="assets/img/sections/promo/circle-big.svg" alt=""
                                             class="banner__circle banner__circle_big">
@@ -2064,10 +2068,34 @@
                 </div>
             </div>
         </section>
-        <section class="advantages section-offset">
+        <section class="advantages section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="advantages__container container">
                 <div class="advantages__row row">
-                    <div class="advantages__col advantage col-5">
+                    <div class="advantages__circle-decor"
+                        style="width: 380px; height: 380px; left: -247px; bottom: -267px; animation: flash-small 1s ease 0s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor advantages__circle-decor_small"
+                        style="width: 318px; height: 318px; left: -215px; bottom: -235px; animation: flash-medium 1s ease 0s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor"
+                        style="width: 341px; height: 341px; left: 50%; top: -291px; transform: translateX(-100%); animation: flash-small 1s ease .5s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor advantages__circle-decor_small"
+                        style="width: 283px; height: 283px; left: 50%; top: -262px; transform: translateX(-110%); animation: flash-medium 1s ease .5s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor"
+                        style="width: 428px; height: 428px; right: 50%; bottom: -360px; transform: translateX(100%); animation: flash-small 1s ease 1s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor advantages__circle-decor_small"
+                        style="width: 356px; height: 356px; right: 50%; bottom: -324px; transform: translateX(111%); animation: flash-medium 1s ease 1s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor"
+                        style="width: 428px; height: 428px; right: -172px; top: -291px; animation: flash-small 1s ease 1.5s infinite alternate;">
+                    </div>
+                    <div class="advantages__circle-decor advantages__circle-decor_small"
+                        style="width: 356px; height: 356px; right: -136px; top: -255px; animation: flash-medium 1s ease 1.5s infinite alternate;">
+                    </div>
+                    <div class="advantages__col advantage col-5" data-aos="fade-up" data-aos-duration="200">
                         <picture class="advantage__picture">
                             <img src="assets/img/sections/advantages/1.svg" alt="" class="advantage__icon">
                         </picture>
@@ -2075,7 +2103,8 @@
                             Более 65 лет успешной работы
                         </p>
                     </div>
-                    <div class="advantages__col advantage col-5">
+                    <div class="advantages__col advantage col-5" data-aos="fade-up" data-aos-duration="200"
+                        data-aos-delay="50">
                         <picture class="advantage__picture">
                             <img src="assets/img/sections/advantages/2.svg" alt="" class="advantage__icon">
                         </picture>
@@ -2083,7 +2112,8 @@
                             Круглосуточный стационар
                         </p>
                     </div>
-                    <div class="advantages__col advantage col-5">
+                    <div class="advantages__col advantage col-5" data-aos="fade-up" data-aos-duration="200"
+                        data-aos-delay="100">
                         <picture class="advantage__picture">
                             <img src="assets/img/sections/advantages/3.svg" alt="" class="advantage__icon">
                         </picture>
@@ -2091,7 +2121,8 @@
                             Оборудование экспертного класса
                         </p>
                     </div>
-                    <div class="advantages__col advantage col-5">
+                    <div class="advantages__col advantage col-5" data-aos="fade-up" data-aos-duration="200"
+                        data-aos-delay="150">
                         <picture class="advantage__picture">
                             <img src="assets/img/sections/advantages/4.svg" alt="" class="advantage__icon">
                         </picture>
@@ -2099,7 +2130,8 @@
                             Более 20 check-up программ
                         </p>
                     </div>
-                    <div class="advantages__col advantage col-5">
+                    <div class="advantages__col advantage col-5" data-aos="fade-up" data-aos-duration="200"
+                        data-aos-delay="200">
                         <picture class="advantage__picture">
                             <img src="assets/img/sections/advantages/5.svg" alt="" class="advantage__icon">
                         </picture>
@@ -2110,13 +2142,13 @@
                 </div>
             </div>
         </section>
-        <section class="extra section-offset">
+        <section class="extra section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="extra__container container">
                 <div class="extra__row">
-                    <picture class="extra__picture">
+                    <picture class="extra__picture" data-aos="zoom-out-bottom" data-aos-delay="300">
                         <img src="assets/img/sections/extra/1.png" alt="" class="extra__img">
                     </picture>
-                    <div class="extra__content">
+                    <div class="extra__content" data-aos="zoom-out-up" data-aos-delay="300">
                         <h2 class="extra__title section-title">
                             Медицинские осмотры по достпным ценам
                         </h2>
@@ -2143,18 +2175,18 @@
                 </div>
             </div>
         </section>
-        <section class="services section-offset">
+        <section class="services section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="services__container container">
-                <h2 class="services__title section-title">
+                <h2 class="services__title section-title" data-aos="fade-right">
                     Наши услуги
                 </h2>
-                <p class="services__descr section-descr">
+                <p class="services__descr section-descr" data-aos="fade-right">
                     Клиника «Гармония» занимается лечением заболеваний любой сложности в Ростове-на-Дону. Мы собрали
                     команду лучших специалистов в городе, чтобы предоставлять максимально качественные, комплексные
                     услуги.
                 </p>
                 <div class="services__row row">
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2163,7 +2195,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2266,7 +2298,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2275,7 +2307,7 @@
                             <p class="service__title">
                                 Врачи для взрослых
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2345,7 +2377,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2354,7 +2386,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2457,7 +2489,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2466,7 +2498,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2577,7 +2609,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2586,7 +2618,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2689,7 +2721,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2698,7 +2730,7 @@
                             <p class="service__title">
                                 Врачи для взрослых
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2768,7 +2800,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2777,7 +2809,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -2880,7 +2912,7 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="services__card service col-4">
+                    <article class="services__card service col-4" data-aos="fade-up" data-aos-delay="200">
                         <picture class="service__picture">
                             <img src="assets/img/sections/services/1.svg" alt="" class="service__icon"
                                 aria-label="presentation">
@@ -2889,7 +2921,7 @@
                             <p class="service__title">
                                 Врачи для детей
                             </p>
-                            <ul class="service__list">
+                            <ul class="service__list" data-aos="fade-up" data-aos-delay="200">
                                 <li class="service__item">
                                     <a href="#" class="service__link">
                                         <span class="service__link-text">
@@ -3003,9 +3035,36 @@
                 </div>
             </div>
         </section>
-        <section class="about section-offset">
+        <section class="about section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="about__container">
-                <div class="about__content">
+                <div class="about__circle"
+                    style="width: 670px; height: 670px; left: -538px; top: -430px; animation: flash-small 1s ease 0s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_medium"
+                    style="width: 805px; height: 805px; left: -606px; top: -498px; animation: flash-medium 1s ease 0s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_big"
+                    style="width: 941px; height: 941px; left: -647px; top: -566px; animation: flash-big 1s ease 0s infinite alternate;">
+                </div>
+                <div class="about__circle"
+                    style="width: 670px; height: 670px; right: -410px; top: 50%; transform: translateY(-50%); animation: flash-small 1s ease 0s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_medium"
+                    style="width: 805px; height: 805px; right: -477px; top: 50%; transform: translateY(-50%); animation: flash-medium 1s ease .5s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_big"
+                    style="width: 941px; height: 941px; right: -545px; top: 50%; transform: translateY(-50%); animation: flash-big 1s ease .5s infinite alternate;">
+                </div>
+                <div class="about__circle"
+                    style="width: 441px; height: 441px; left: -227px; bottom: -342px; animation: flash-small 1s ease 1s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_medium"
+                    style="width: 529px; height: 529px; left: -271px; bottom: -386px; animation: flash-medium 1s ease 1s infinite alternate;">
+                </div>
+                <div class="about__circle about__circle_big"
+                    style="width: 619px; height: 619px; left: -316px; bottom: -431px; animation: flash-big 1s ease 1s infinite alternate;">
+                </div>
+                <div class="about__content" data-aos="fade-right" data-aos-duration="600">
                     <h1 class="about__title section-title">
                         О клинике «Гармония»
                     </h1>
@@ -3082,7 +3141,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about__video">
+                <div class="about__video" data-aos="fade-bottom" data-aos-duration="600">
                     <img src="assets/img/sections/about/preview-video.jpg" alt="" class="about__video-img">
                     <a data-fancybox href="https://youtu.be/XbGs_qK2PQA" class="about__video-btn">
                         <span class="about__video-btn-text">
@@ -3097,7 +3156,7 @@
                 </div>
             </div>
         </section>
-        <section class="programs section-offset">
+        <section class="programs section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="programs__container container">
                 <div class="programs__top slider-top">
                     <h2 class="programs__title section-title">
@@ -3220,13 +3279,13 @@
                 </div>
             </div>
         </section>
-        <section class="extra extra_reverse section-offset">
+        <section class="extra extra_reverse section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="extra__container container">
                 <div class="extra__row">
-                    <picture class="extra__picture">
+                    <picture class="extra__picture" data-aos="zoom-out-bottom" data-aos-delay="300">
                         <img src="assets/img/sections/extra/2.png" alt="" class="extra__img">
                     </picture>
-                    <div class="extra__content">
+                    <div class="extra__content" data-aos="zoom-out-up" data-aos-delay="300">
                         <h2 class="extra__title section-title">
                             Личные медицинские книжки от 1500 ₽
                         </h2>
@@ -3249,7 +3308,7 @@
                 </div>
             </div>
         </section>
-        <section class="promotions section-offset">
+        <section class="promotions section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="promotions__container container">
                 <div class="promotions__top slider-top">
                     <h2 class="promotions__title section-title">
@@ -3336,9 +3395,27 @@
                 </div>
             </div>
         </section>
-        <section class="callback">
+        <section class="callback" data-aos="fade-up" data-aos-duration="600">
+            <div class="callback__circle"
+                style="width: 927px; height: 927px; left: -742px; bottom: -698px; animation: flash-small 1s ease 0s infinite alternate; z-index: 2;">
+            </div>
+            <div class="callback__circle callback__circle_medium"
+                style="width: 1065px; height: 1065px; left: -801px; bottom: -789px; animation: flash-medium 1s ease 0s infinite alternate; z-index: 1;">
+            </div>
+            <div class="callback__circle callback__circle_medium"
+                style="width: 2085px; height: 2085px; right: -1184px; bottom: -1322px; animation: flash-small 1s ease 0s infinite alternate;">
+            </div>
+            <div class="callback__circle"
+                style="width: 1814px; height: 1814px; right: -1039px; bottom: -1164px; animation: flash-big 1s ease 0s infinite alternate;">
+            </div>
+            <div class="callback__circle callback__circle_big"
+                style="width: 1554px; height: 1554px; right: -918px; bottom: -1056px; animation: flash-medium 1s ease 0s infinite alternate;">
+            </div>
+            <div class="callback__circle callback__circle_very-big"
+                style="width: 1293px; height: 1293px; right: -789px; bottom: -925px; animation: flash-small 1s ease 0s infinite alternate;">
+            </div>
             <div class="callback__container container">
-                <div class="callback__content">
+                <div class="callback__content" data-aos="fade-right" data-aos-delay="300">
                     <h2 class="callback__title section-title section-title_white">
                         Медицинская помощь
                         для всей семьи
@@ -3385,13 +3462,13 @@
                         </div>
                     </form>
                 </div>
-                <picture class="callback__picture">
+                <picture class="callback__picture" data-aos="fade-bottom" data-aos-delay="300">
                     <img src="assets/img/sections/callback/preview.png" alt="" class="callback__img">
                 </picture>
             </div>
         </section>
         <div class="bundle-block section-offset section-offset_padding">
-            <section class="faq section-offset">
+            <section class="faq section-offset" data-aos="fade-up" data-aos-duration="600">
                 <div class="faq__container container">
                     <div class="faq__info">
                         <h2 class="faq__title section-title">
@@ -3408,7 +3485,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="faq__wrapper accor-wrapper">
+                    <div class="faq__wrapper accor-wrapper" data-aos="fade-bottom" data-aos-delay="300">
                         <div class="faq__accor question accor">
                             <button class="question__title accor-open" data-accordion-button>
                                 <span class="question__title-text">
@@ -3641,9 +3718,9 @@
                 </div>
             </section>
         </div>
-        <section class="documents section-offset">
+        <section class="documents section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="documents__container container">
-                <div class="documents__info">
+                <div class="documents__info" data-aos="fade-right" data-aos-delay="300">
                     <h2 class="documents__title section-title">
                         Лицензии и сертификаты нашей клиники
                     </h2>
@@ -3673,7 +3750,7 @@
                         <div class="documents__pagination slider-pagination-fraction"></div>
                     </div>
                 </div>
-                <div class="documents__slider swiper">
+                <div class="documents__slider swiper" data-aos="fade-bottom" data-aos-delay="300">
                     <div class="documents__slider-wrapper swiper-wrapper">
                         <a href="assets/img/sections/documents/1.png" data-fancybox="documents"
                             class="documents__slide document swiper-slide photo-zoom">
@@ -3695,13 +3772,13 @@
                 </div>
             </div>
         </section>
-        <section class="extra section-offset">
+        <section class="extra section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="extra__container container">
                 <div class="extra__row">
-                    <picture class="extra__picture">
+                    <picture class="extra__picture" data-aos="zoom-out-bottom" data-aos-delay="300">
                         <img src="assets/img/sections/extra/3.png" alt="" class="extra__img">
                     </picture>
-                    <div class="extra__content">
+                    <div class="extra__content" data-aos="zoom-out-up" data-aos-delay="300">
                         <h2 class="extra__title section-title">
                             Перевозка лежачих больных от 2000 ₽
                         </h2>
@@ -3730,7 +3807,7 @@
                 </div>
             </div>
         </section>
-        <section class="specialists section-offset">
+        <section class="specialists section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="specialists__container container">
                 <div class="specialists__top slider-top">
                     <h2 class="specialists__title section-title">
@@ -3931,13 +4008,14 @@
                 </div>
             </div>
         </section>
-        <section class="trust">
+        <section class="trust" data-aos="fade-up" data-aos-duration="600">
             <div class="trust__container container">
                 <h2 class="trust__title section-title">
                     Нам доверяют
                 </h2>
                 <div class="trust__row row">
-                    <a href="#" target="_blank" class="trust__item item-trust rating">
+                    <a href="#" target="_blank" class="trust__item item-trust rating" data-aos="fade-up"
+                        data-aos-duration="200">
                         <picture class="item-trust__logo">
                             <img src="assets/img/sections/trust/google-map.svg" alt="" class="item-trust__img">
                         </picture>
@@ -3971,7 +4049,8 @@
                         </div>
                         <p class="rating__value">4,5</p>
                     </a>
-                    <a href="#" target="_blank" class="trust__item item-trust rating">
+                    <a href="#" target="_blank" class="trust__item item-trust rating" data-aos="fade-up"
+                        data-aos-duration="200" data-aos-delay="200">
                         <picture class="item-trust__logo">
                             <img src="assets/img/sections/trust/2gis.svg" alt="" class="item-trust__img">
                         </picture>
@@ -4005,7 +4084,8 @@
                         </div>
                         <p class="rating__value">4,8</p>
                     </a>
-                    <a href="#" target="_blank" class="trust__item item-trust rating">
+                    <a href="#" target="_blank" class="trust__item item-trust rating" data-aos="fade-up"
+                        data-aos-duration="200">
                         <picture class="item-trust__logo">
                             <img src="assets/img/sections/trust/zoon.svg" alt="" class="item-trust__img">
                         </picture>
@@ -4039,7 +4119,8 @@
                         </div>
                         <p class="rating__value">4,8</p>
                     </a>
-                    <a href="#" target="_blank" class="trust__item item-trust rating">
+                    <a href="#" target="_blank" class="trust__item item-trust rating" data-aos="fade-up"
+                        data-aos-duration="200" data-aos-delay="200">
                         <picture class="item-trust__logo">
                             <img src="assets/img/sections/trust/yandex-map.svg" alt="" class="item-trust__img">
                         </picture>
@@ -4076,7 +4157,7 @@
                 </div>
             </div>
         </section>
-        <section class="reviews section-offset section-offset_padding">
+        <section class="reviews section-offset section-offset_padding" data-aos="fade-up" data-aos-duration="600">
             <div class="reviews__container container">
                 <div class="reviews__top slider-top">
                     <h2 class="reviews__title section-title">
@@ -4204,7 +4285,7 @@
                 </button>
             </div>
         </section>
-        <section class="news section-offset">
+        <section class="news section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="news__container container">
                 <div class="news__top slider-top">
                     <h2 class="news__title section-title">
@@ -4316,13 +4397,13 @@
                 </div>
             </div>
         </section>
-        <section class="extra extra_reverse section-offset">
+        <section class="extra extra_reverse section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="extra__container container">
                 <div class="extra__row">
-                    <picture class="extra__picture">
+                    <picture class="extra__picture" data-aos="zoom-out-bottom" data-aos-delay="300">
                         <img src="assets/img/sections/extra/4.png" alt="" class="extra__img">
                     </picture>
-                    <div class="extra__content">
+                    <div class="extra__content" data-aos="zoom-out-up" data-aos-delay="300">
                         <h2 class="extra__title section-title">
                             Медосмотр к школе и детсаду от 2100 ₽
                         </h2>
@@ -4360,7 +4441,7 @@
                 </div>
             </div>
         </section>
-        <section class="articles section-offset">
+        <section class="articles section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="articles__container container">
                 <div class="articles__top slider-top">
                     <h2 class="articles__title section-title">
@@ -4463,14 +4544,14 @@
                 </div>
             </div>
         </section>
-        <section class="contacts section-offset">
+        <section class="contacts section-offset" data-aos="fade-up" data-aos-duration="600">
             <div class="contacts__container container">
                 <h2 class="contacts__title section-title">
                     Как к нам попасть
                 </h2>
                 <div class="contacts__content">
                     <div id="map" class="contacts__map"></div>
-                    <div class="contacts__info">
+                    <div class="contacts__info" data-aos="fade-up" data-aos-duration="600">
                         <button class="contacts__info-item contacts-item popup-btn" data-path="cities">
                             <div class="contacts-item__img-wrapper">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -4528,7 +4609,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up" data-aos-duration="600">
         <div class="footer__top">
             <div class="footer__top-container container">
                 <div class="footer__block">
