@@ -392,6 +392,11 @@
                             _self.el.classList.remove('swiper--pause');
                             _self.autoplay.resume();
                         });
+                    },
+                    slideChange: function () {
+                        setTimeout(() => {
+                            AOS.refresh();
+                        }, 500);
                     }
                 }
             });
@@ -730,6 +735,13 @@
                         spaceBetween: 15,
                     },
                 },
+                on: {
+                    slideChange: function () {
+                        setTimeout(() => {
+                            AOS.refresh();
+                        }, 500);
+                    }
+                }
             });
         }
 
@@ -787,6 +799,13 @@
                         spaceBetween: 30,
                     }
                 },
+                on: {
+                    slideChange: function () {
+                        setTimeout(() => {
+                            AOS.refresh();
+                        }, 500);
+                    }
+                }
             });
         }
 
@@ -978,6 +997,90 @@
                 slidesPerView: 1,
                 spaceBetween: 15,
             });
+        }
+
+        // timetable mobile
+        const timetableMobileDaysSliderCheck = document.querySelectorAll('.timetable__mobile-days');
+        const scheduleSliderCheck = document.querySelectorAll('.schedule');
+
+        if (timetableMobileDaysSliderCheck.length > 0 && scheduleSliderCheck.length > 0) {
+            const timetableMobileDaysSlider = new Swiper('.timetable__mobile-days', {
+                navigation: {
+                    nextEl: '.timetable__mobile-days-btn_next',
+                    prevEl: '.timetable__mobile-days-btn_prev',
+                },
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+
+            const scheduleSlider = new Swiper('.schedule', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoHeight: true,
+                on: {
+                    slideChange: function () {
+                        setTimeout(() => {
+                            AOS.refresh();
+                        }, 500);
+                    }
+                }
+            });
+
+            timetableMobileDaysSlider.controller.control = scheduleSlider;
+            scheduleSlider.controller.control = timetableMobileDaysSlider;
+        }
+
+        // article-navigation
+        const articleNavigation = document.querySelector('.navigation-article');
+        console.log(articleNavigation);
+
+        if (articleNavigation) {
+            const jsScrollBlockList = document.querySelectorAll('section h2');
+            console.log(jsScrollBlockList);
+
+            if (jsScrollBlockList.length > 0) {
+                for (let i = 0; i < jsScrollBlockList.length; i += 1) {
+                    const jsScrollBlock = jsScrollBlockList[i];
+                    const titleBlock = jsScrollBlock.textContent;
+                    const articleNavigationList = document.querySelector('.navigation-article__list');
+                    const articleNavigationItem = document.createElement('li');
+                    const articleNavigationLink = document.createElement('a');
+                    articleNavigationItem.classList.add('navigation-article__item');
+                    articleNavigationLink.classList.add('navigation-article__link');
+                    jsScrollBlock.setAttribute('id', `${i}`)
+                    articleNavigationLink.setAttribute('href', `#${i}`);
+                    articleNavigationLink.textContent = titleBlock;
+                    articleNavigationItem.append(articleNavigationLink);
+                    articleNavigationList.append(articleNavigationItem);
+                }
+
+                document.querySelectorAll('a[href^="#"').forEach(link => {
+
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        let href = this.getAttribute('href').substring(1);
+
+                        const scrollTarget = document.getElementById(href);
+
+                        // const topOffset = document.querySelector('.scrollto').offsetHeight;
+                        const topOffset = 120;
+                        const elementPosition = scrollTarget.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - topOffset;
+
+                        window.scrollBy({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            }
         }
 
         new Tabs().initTabs();

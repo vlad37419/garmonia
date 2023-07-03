@@ -1586,6 +1586,8 @@ main {
 .filters {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
 }
 
 .filters__item {
@@ -4380,6 +4382,192 @@ button.header__info-title {
     margin: 0;
 }
 
+/* contacts-page */
+.contacts-page__row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+
+.contacts-page__block {
+    margin-right: 24px;
+}
+
+.contacts-page__block:last-child {
+    margin-right: 0;
+}
+
+.contacts-page__block_decor {
+    position: relative;
+}
+
+.contacts-page__block_decor::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 23px;
+    width: 1px;
+    height: calc(100% - 55px);
+    background-color: #DFDFF2;
+}
+
+.contacts-page-item {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contacts-page-item:last-child {
+    margin-bottom: 0;
+}
+
+.contacts-page-item__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: rgba(171, 212, 62, 0.15);
+}
+
+.contacts-page-item__title {
+    text-align: initial;
+    color: #858FA1;
+    font-size: 14px;
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+
+.contacts-page-item__text {
+    text-align: initial;
+    color: var(--main-black);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    transition: color .2s ease;
+}
+
+.contacts-page-item__button {
+    color: var(--main-color);
+    text-align: initial;
+    font-weight: 500;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    transition: color .2s ease;
+}
+
+.contacts-page__row {
+    margin-bottom: 50px;
+}
+
+.contacts-page-item__wrapper {
+    margin-bottom: 20px;
+}
+
+.contacts-page-item__wrapper:last-child {
+    margin-bottom: 0;
+}
+
+.contacts-page-item__socials {
+    margin: 15px 0 65px;
+}
+
+.contacts-page__map-wrapper {
+    padding-bottom: 60px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #DFDFF2;
+}
+
+/* timetable */
+.timetable__filters {
+    margin-bottom: 25px;
+}
+
+.table-time {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table-time__head {
+    display: flex;
+}
+
+.table-time__row {
+    display: flex;
+}
+
+.table-time__column {
+    position: relative;
+    flex: 1 1 9.4%;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding: 7.5px 20px;
+    background-color: #ECF2F9;
+}
+
+.table-time__column:first-child {
+    flex: 1 1 33%;
+    background-color: #E7EFF9;
+}
+
+.table-time__head-column {
+    padding: 20px;
+    background-color: var(--main-color);
+}
+
+.table-time__head-column:first-child {
+    background-color: var(--main-color);
+}
+
+.table-time__column-title {
+    color: #858FA1;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.table-time__head-column .table-time__column-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.table-time__column-text {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.table-time__column-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.table-time__column-button-text {
+    position: relative;
+    font-size: 16px;
+    line-height: 25px;
+    transition: color .2s ease;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+    margin-bottom: 5px;
+}
+
+.table-time__column-button-text:last-child {
+    margin-bottom: 0;
+}
+
+.timetable__mobile {
+    display: none;
+}
+
 /* animations */
 @keyframes BulletProgress {
     to {
@@ -4726,6 +4914,21 @@ button.header__info-title {
     .navigation-article__link:hover {
         color: var(--main-hover);
     }
+
+    /* contacts-page */
+    .contacts-page-item__button:hover {
+        color: var(--main-hover);
+    }
+
+    a.contacts-page-item:hover .contacts-page-item__text,
+    button.contacts-page-item:hover .contacts-page-item__text {
+        color: var(--main-color);
+    }
+
+    /* timetable */
+    .table-time__column-button:hover .table-time__column-button-text {
+        color: var(--main-color);
+    }
 }
 
 @media (max-width: 1600px) {
@@ -4741,7 +4944,7 @@ button.header__info-title {
     .consultation__content {
         padding-top: 60px;
         padding-bottom: 60px;
-        padding-right: 500px;
+        padding-right: 570px;
     }
 }
 
@@ -4902,6 +5105,33 @@ button.header__info-title {
 
     .reviewer__date:last-child {
         margin-bottom: 0;
+    }
+
+    /* contacts-page */
+    .contacts-page__block {
+        flex: 0 1 calc(33.333% - 20px);
+        margin-right: 30px;
+    }
+
+    .contacts-page__block:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .contacts-page__block:last-child {
+        margin-bottom: 0;
+    }
+
+    .contacts-page-item__socials {
+        margin-right: 0;
+    }
+
+    /* timetable */
+    .table-time__column:first-child:first-child {
+        flex: 1 1 25%;
+    }
+
+    .table-time__column {
+        flex: 1 1 10.6%;
     }
 }
 
@@ -5100,6 +5330,27 @@ button.header__info-title {
     .detail-specialist__preview {
         width: 300px;
         margin-right: 24px;
+    }
+
+    /* timetable */
+    .table-time__column-title {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .table-time__column-title:last-child {
+        margin-bottom: 0;
+    }
+
+    .table-time__column-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .table-time__column-button-text {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 
@@ -6931,6 +7182,136 @@ button.header__info-title {
         font-size: 14px;
         line-height: 20px;
     }
+
+    /* contacts-page */
+    .contacts-page__row {
+        margin-bottom: 25px;
+    }
+
+    .contacts-page__block {
+        flex: calc(33.333% - 10px);
+        margin-right: 15px;
+    }
+
+    .contacts-page-item {
+        margin-bottom: 15px;
+    }
+
+    .contacts-page-item__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        padding: 6px;
+    }
+
+    .contacts-page__block_decor::after {
+        left: 15px;
+        height: calc(100% - 40px);
+    }
+
+    .contacts-page-item__title {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 5px;
+    }
+
+    .contacts-page-item__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .contacts-page-item__button {
+        font-size: 14px;
+        line-height: 20px
+    }
+
+    .contacts-page__map-wrapper {
+        padding-bottom: 40px;
+        margin-bottom: 25px;
+    }
+
+    /* timetable */
+    .table-time {
+        display: none;
+    }
+
+    .timetable__mobile {
+        display: block;
+    }
+    
+    .timetable__mobile-days {
+        margin-bottom: 15px;
+    }
+
+    .timetable__mobile-day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 34px;
+        border-radius: 5px;
+        background-color: var(--main-color);
+    }
+
+    .timetable__mobile-day-title {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    .timetable__mobile-days-btn {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        width: 34px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timetable__mobile-days-btn_prev {
+        left: 0;
+    }
+
+    .timetable__mobile-days-btn_next {
+        right: 0;
+    }
+
+    .schedule__slide-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #DFDFF2;
+    }
+
+    .schedule__slide-item:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: initial;
+    }
+
+    .schedule__slide-content {
+        margin-right: 16px;
+    }
+
+    .schedule__slide-button {
+        position: initial;
+        width: initial;
+        height: initial;
+    }
+
+    .schedule__slide-button::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -7219,6 +7600,20 @@ button.header__info-title {
         width: 20px;
         height: 20px;
         padding: 4px;
+    }
+
+    /* contacts-page */
+    .contacts-page__row {
+        display: block;
+    }
+
+    .contacts-page__block {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .contacts-page__block:last-child {
+        margin-bottom: 0;
     }
 }
 
