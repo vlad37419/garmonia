@@ -333,6 +333,7 @@
                 if (button && button.dataset.accordionButton !== undefined) {
                     this.handleClick(button)
                 }
+                AOS.refresh();
             }
         }
 
@@ -570,8 +571,39 @@
             });
         }
 
+        // specialist documents slider
+        const specialistDocumentsSliderCheck = document.querySelectorAll('.specialist-documents__slider');
+
+        if (specialistDocumentsSliderCheck.length > 0) {
+            const specialistDocumentsSlider = new Swiper('.specialist-documents__slider', {
+                navigation: {
+                    nextEl: '.specialist-documents__slider-btn_next',
+                    prevEl: '.specialist-documents__slider-btn_prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 2.35,
+                        spaceBetween: 10,
+                    },
+                    575: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    }
+                },
+            });
+        }
+
         // documents fancybox
         Fancybox.bind('[data-fancybox="documents"]', {
+            placeFocusBack: false,
+        });
+
+        // gallery fancybox
+        Fancybox.bind('[data-fancybox="gallery"]', {
             placeFocusBack: false,
         });
 
@@ -644,7 +676,9 @@
         function setRatingActiveWidth(index = ratingValue.innerHTML.replace(',', '.')) {
             const ratingActiveWidth = index / 0.05;
             ratingActive.style.width = `${ratingActiveWidth}%`;
-            ratingText.innerHTML = `Рекомендуют ${Math.round(ratingActiveWidth)}%`
+            if (ratingText) {
+                ratingText.innerHTML = `Рекомендуют ${Math.round(ratingActiveWidth)}%`
+            }
         }
 
         function setRating(rating) {
@@ -816,6 +850,7 @@
                                 tabActiveName.closest('.tabs').classList.remove('active');
                                 document.body.classList.remove('lock');
                             }
+                            AOS.refresh();
                         }
                     });
                 }
@@ -896,7 +931,6 @@
 
                 tabsWrapper.closest('.tabs__container').addEventListener('click', function (e) {
                     if (!e.target.closest('.tabs__wrapper')) {
-                        console.log(tabsWrapper);
                         tabsWrapper.closest('.tabs').classList.remove('active');
                         document.body.classList.remove('lock');
                     }
@@ -949,5 +983,10 @@
         new Tabs().initTabs();
         initPhoneMask();
         AOS.init();
+        document.querySelectorAll('.select').forEach((item) => {
+            new Choices(item, {
+                searchEnabled: false,
+            });
+        });
     });
 })();
