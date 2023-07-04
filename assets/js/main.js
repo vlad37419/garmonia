@@ -333,7 +333,9 @@
                 if (button && button.dataset.accordionButton !== undefined) {
                     this.handleClick(button)
                 }
-                AOS.refresh();
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 500);
             }
         }
 
@@ -869,7 +871,9 @@
                                 tabActiveName.closest('.tabs').classList.remove('active');
                                 document.body.classList.remove('lock');
                             }
-                            AOS.refresh();
+                             setTimeout(() => {
+                                 AOS.refresh();
+                             }, 500);
                         }
                     });
                 }
