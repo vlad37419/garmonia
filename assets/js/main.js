@@ -1089,7 +1089,9 @@
 
         new Tabs().initTabs();
         initPhoneMask();
-        AOS.init();
+        AOS.init({
+            once: true,
+        });
         document.querySelectorAll('.select').forEach((item) => {
             new Choices(item, {
                 searchEnabled: false,
