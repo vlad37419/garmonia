@@ -1045,7 +1045,7 @@
         console.log(articleNavigation);
 
         if (articleNavigation) {
-            const jsScrollBlockList = document.querySelectorAll('section h2');
+            const jsScrollBlockList = document.querySelectorAll('h2');
             console.log(jsScrollBlockList);
 
             if (jsScrollBlockList.length > 0) {
@@ -1074,7 +1074,7 @@
                         const scrollTarget = document.getElementById(href);
 
                         // const topOffset = document.querySelector('.scrollto').offsetHeight;
-                        const topOffset = 120;
+                        const topOffset = 180;
                         const elementPosition = scrollTarget.getBoundingClientRect().top;
                         const offsetPosition = elementPosition - topOffset;
 
